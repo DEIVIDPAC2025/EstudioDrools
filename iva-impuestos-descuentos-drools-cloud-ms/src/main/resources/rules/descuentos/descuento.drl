@@ -1,0 +1,28 @@
+package rules.descuentos
+
+import arsii.iva.descuentosdrools.cloud.ms.model.Cliente;
+
+rule "Descuento para mayores o iguales a 60"
+    when
+        $c : Cliente(edad >= 60)
+    then
+        System.out.println("Aplicando 50% de descuento para cliente mayor de 60");
+        $c.setDescuento($c.getCompra() * 0.50);
+end
+
+rule "Descuento para mayores o igual 25 hasta 59"
+    when
+        $c : Cliente(edad >= 25 && edad < 60)
+    then
+        System.out.println("Aplicando 30% de descuento para cliente adulto joven");
+        $c.setDescuento($c.getCompra() * 0.30);
+end
+
+rule "Descuento para menores de 25"
+    when
+        $c : Cliente(edad < 25)
+    then
+        System.out.println("Aplicando 10% de descuento para cliente joven");
+        $c.setDescuento($c.getCompra() * 0.10);
+end
+

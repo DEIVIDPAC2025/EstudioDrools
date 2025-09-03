@@ -1,0 +1,11 @@
+package rules.impuestos
+
+import arsii.iva.descuentosdrools.cloud.ms.model.Factura;
+
+rule "Calcular IVA 19%"
+    when
+        $f : Factura()
+    then
+        System.out.println("Aplicando IVA 19% a factura #" + $f.getNumero());
+        $f.setIva($f.getMonto() * 0.19);
+end
