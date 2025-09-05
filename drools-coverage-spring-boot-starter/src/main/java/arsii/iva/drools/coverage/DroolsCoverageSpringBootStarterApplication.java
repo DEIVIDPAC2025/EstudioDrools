@@ -8,7 +8,7 @@ public class DroolsCoverageSpringBootStarterApplication {
 
 	/*
 	Flujo del starter
-
+	
 	@EnableDroolsCoverage
 
 	Es una anotación que habilita la autoconfiguración.
@@ -36,7 +36,9 @@ public class DroolsCoverageSpringBootStarterApplication {
 	Tiene el método generateReport().
 
 	Este método toma lo que acumuló el listener y lo transforma en un reporte (ej: JSON, CSV, etc., según tu implementación).
+	
 	*/
+	
 	public static void main(String[] args) {
 		SpringApplication.run(DroolsCoverageSpringBootStarterApplication.class, args);
 	}
