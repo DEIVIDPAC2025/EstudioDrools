@@ -1,29 +1,5 @@
 # EstudioDrools
 PROYECTO DE VALIDACIONES CON DROOLS
 
-flowchart TD
-
-A[Inicio función marcaConAtributosCSEI] --> B[Inicializar contadores: nMarcados=0, nRegistrosLeidos=0]
-
-B --> C[Recorrer registros datAux (x=1..N)]
-
-C --> D{¿datAux[x] cumple condición inicial? <br/> (FAEL='S' y DECLA='N') <br/> O (nEsce=3,7,10 y DECLA='N')}
-D -- No --> I[Incrementar nRegistrosLeidos] --> C
-D -- Sí --> E[Recorrer atributos sDatosAtributos (y=1..J2)]
-
-E --> F{¿RUT coincide y atributo = 'CSEI'?}
-F -- Sí --> G[sw_marcamos=1 <br/> salir del loop atributos]
-F -- No --> E
-
-G --> H{sw_marcamos=1 ?}
-H -- Sí --> H1[datAux[x]->v_TIENE_CSEI = 'S' <br/> nMarcados++]
-H -- No --> H2[datAux[x]->v_TIENE_CSEI = 'N']
-
-H1 --> I
-H2 --> I
-
-I[Incrementar nRegistrosLeidos <br/> si múltiplo de 80000 → mostrar progreso] --> C
-
-C -->|Fin del loop| J[Mostrar total marcados con CSEI]
-J --> K[Fin función]
+![proce4310.sh](https://www.plantuml.com/plantuml/svg/TPFTRjf048Nlzob6wWseW19-50cQDYwGnCgF4QRj9HhM0soothLcrpJaRVe0kSeZy6AL7Ke0DPUhi-jpPhxZ2-UHVPvgoDXAQhTEJnfkAOHNNXDSwlp1Ga8QuYNfeplkKPaC6LE8_LeJECzA5f_QKmOqnrpxIslyFQO40IlyG8_LCy5fymEnT9XPdUpf0RFzFLag-MZ8EMWsciTYtshBy6d1k1P2bACAqRqbOiYGDtzIycmTL4R3SHWDeXeCu_xmFXY7KRKdHBTlpLmjSaO6J6UAZ2U8na7_TYWgSJYeRG_Jw-XkM8DHCBakd_r4hPBY3SkbMba72G4PpvXWJwWvL89_GdJphGf-IGOgyUQbAaWxWigzhGg0xf3PCgnXhanF03XlCq4cKVEtP2xN7e4CH8nIawZy2CF1DFf-6ru5WxVyLsI8zuD8Qo3uTTCJnde2Lekb5tK8ZFMOM3VzCYUvnAyD_-IXSjOvQLNtrBFMaNwWTjf7yY3kj5lL8Z0KPa9qXmyaSuzSj6Z1c29ah8nK6MenAehbiAXM4NnxPD1suVwNjhYuyzDs8UemffLoofhz67lsvU9tUE7y79e7gmVOhQjqk2FZSjHbsVsJxvL4p4eXmshpWZ3kZm21adJMS4erfExjqNl7b6QiKbLWJEsAtb4818cSaSUY7QviJ37vra9QPh95T3LN4gNQl9g3FOH6wdnDGCvZidbnNabqNL67YVMe0RTOH1r6bi6hpBuHhS5PgmQTTgi6nMW7W0BfSzJg6HaypZJkcXM7W-ae60TtmyauYgjRGYL31YxtldarvNhFMrLHj0mzV6wUB7l5NsSpSK4coLFz5m00 "proce4310.sh")
 
